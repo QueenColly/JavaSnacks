@@ -7,7 +7,7 @@ public static void main(String[] args){
     System.out.println("The nth value of a pentagonal is "+ getPentagnalNumber(100));
     System.out.println("The sum of digit is "+ sumDigits(11111));
     System.out.println("area of pentagon is " +area(5));
-    
+    System.out.println("The area of a regular polygon is "+ area(5, 6));
 
 }
 
@@ -45,9 +45,16 @@ public static void main(String[] args){
 
 }
     public static double area(double side){ // question 24
-    int s = 5;
-    double area = ((5 * s*s)/(4 * 0.7265));
+
+    double area = ((5 * side*side)/(4 * 0.7265));
     return area;
+
+}
+
+     public static double area(int n, double side){ // question 25
+//    double multiply = (n * side * side);
+    double multiply = ((n *side * side )/(4 * 0.577));
+    return multiply;
 
 }
 
