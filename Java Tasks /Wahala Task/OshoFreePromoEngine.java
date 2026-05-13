@@ -5,29 +5,29 @@ public class OshoFreePromoEngine{
         System.out.println(result);
     }   
 
-    public static double getFinalPrice(double price, String promoCode){
+    public static double getFinalPrice(double cartTotal, String promoCode){
         double finalPrice = 0;
         double promoValue = 0.0;
 
-        if(price < 5000 && promoCode.equals("NOT APPLICABLE")){
+        if(cartTotal < 5000 && promoCode.equals("NOT APPLICABLE")){
             promoValue = 0.0;
         }
-        if (price >=5000 && price <= 14999 && promoCode.equals("STARTER10")){
+        if (cartTotal >=5000 && cartTotal <= 14999 && promoCode.equals("STARTER10")){
             promoValue = 0.1;
             System.out.println(promoValue);
         }
-        if(price >= 15000 && price <= 29999 && promoCode.equals("BIGBOY20")){
+        if(cartTotal >= 15000 && cartTotal <= 29999 && promoCode.equals("BIGBOY20")){
             promoValue = 0.2;
             System.out.println(promoValue);
         }
 
-        if(price>=30000 && promoCode.equals("OSHOFREE35")){
+        if(cartTotal>=30000 && promoCode.equals("OSHOFREE35")){
             promoValue = 0.35;
             System.out.println(promoValue);
         }
 
-        double discountAmount = price * promoValue;
-        finalPrice = price - discountAmount;
+        double discountAmount = cartTotal * promoValue;
+        finalPrice = cartTotal - discountAmount;
         
         return finalPrice;
 
