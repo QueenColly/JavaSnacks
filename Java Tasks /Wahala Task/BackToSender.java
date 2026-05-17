@@ -1,36 +1,29 @@
-package wahala;
 
-import java.util.Scanner;
+public class BackToSender{
 
-public class BackToSender {
-    public static int calculateCommission(int successfulDelivery){
-        double percentage = ((double) successfulDelivery /100) * 100;
+    public int getWage(int numberOfDelivery, int basePay,int amountPerParcel){
+        int amount = 0;
+   // int numberOfDelivery = 10;
+//     public int getwage(int numberOfDelivery, int basePay, int amountPerParcel){
+        if( numberOfDelivery < 50){
+//         numberOfDeliver = 10;
+        amount = (10 * 160) + 5000;
+            }
 
-        int amountPerParcel;
-        int basePay = 5000;
+        if(numberOfDelivery > 50 && numberOfDelivery <= 59){
+        amount = (51* 200) + 5000;
+            }
 
-        if (percentage < 50){
-            amountPerParcel = 160;
-        }else if(percentage >= 50 && percentage <= 59){
-            amountPerParcel = 200;
-        }else if(percentage >= 60 && percentage <= 69){
-            amountPerParcel = 250;
-        }else{
-            amountPerParcel = 500;
-        }
+        if(numberOfDelivery >= 60 && numberOfDelivery <=  69){
+        amount = (61 * 250) + 5000;
+            }
 
-        return (successfulDelivery * amountPerParcel) + basePay;
-    }
+        if (numberOfDelivery >= 70){
+        amount = ( 71 * 500) + 5000;
+            }
+          return amount;
+}
 
-    public static void main(String[] args) {
-        System.out.println("How many successful deliveries does the rider have today ?");
-
-        Scanner scanner = new Scanner(System.in);
-
-        int successfulDelivery = scanner.nextInt();
-
-        int commission = BackToSender.calculateCommission(successfulDelivery);
-
-        System.out.println("The rider's commision is "+ commission);
-    }
+    
+    
 }

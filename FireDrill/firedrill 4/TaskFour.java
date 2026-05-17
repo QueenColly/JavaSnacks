@@ -13,7 +13,7 @@ System.out.println(Arrays.toString(getOddArray(numbers)));
     int [] result =new int[numbers.length];
 
     for(int index = 0; index < numbers.length; index++){
-        if(numbers[index] % 2 !=0){
+        if(numbers[index] % 2 ==0){
 
          result[index]= numbers[index];
 
